@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -69,6 +71,7 @@ class _LandingPageState extends State<LandingPage> {
               textDirection: TextDirection.rtl,
               children: [
                 GestureDetector(
+                  onTap: () => log("signup"),
                   child: Container(
                     height: 50.h,
                     width: 342.w,
@@ -77,7 +80,7 @@ class _LandingPageState extends State<LandingPage> {
                           BoxShadow(
                             color: Color.fromARGB(255, 226, 214, 214),
                             blurRadius: 2.0,
-                            spreadRadius: 1.0,
+                            spreadRadius: 0.5,
                             offset: Offset(0.0, 0.0),
                           )
                         ],
@@ -104,6 +107,7 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
                 GestureDetector(
+                  onTap: () => log("Login"),
                   child: Container(
                       height: 50.h,
                       width: 180.w,

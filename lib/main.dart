@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
+import 'pages/login_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -51,7 +53,7 @@ class MyApp extends StatelessWidget {
         // routerConfig: router,
         debugShowCheckedModeBanner: false,
         title: 'Choplife',
-        home: const LandingPage(),
+        home: const LoginPage(),
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
