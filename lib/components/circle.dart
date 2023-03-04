@@ -21,8 +21,8 @@ class CircleProgress extends CustomPainter {
       ..color = const Color(0xffF4972E)
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
-    double angle = 2 * pi * (currentProgress / 100);
-    canvas.drawArc(Rect.fromCircle(center: center, radius: radius), pi / 2,
+    double angle = -2 * pi * (currentProgress / 100);
+    canvas.drawArc(Rect.fromCircle(center: center, radius: radius), -pi / 2,
         angle, false, animationArc);
   }
 
