@@ -1,3 +1,4 @@
+import 'package:choplife/pages/forgot_password_page.dart';
 import 'package:choplife/pages/landing_page.dart';
 import 'package:choplife/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
         // routerConfig: router,
         debugShowCheckedModeBanner: false,
         title: 'Choplife',
-        home: const LoginPage(),
+        home: const ForgotPassword(),
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
