@@ -127,14 +127,6 @@ class _LandingPageState extends State<LandingPage> {
               ],
             ),
           ),
-          // Container(
-          //   height: 30.h,
-          //   width: 150.w,
-          //   decoration: const BoxDecoration(color: Colors.black),
-          //   child: Container(
-          //     decoration: const BoxDecoration(color: Colors.yellow),
-          //   ),
-          // )
         ],
       )),
     );
