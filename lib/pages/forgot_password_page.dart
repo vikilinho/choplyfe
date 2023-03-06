@@ -21,7 +21,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             children: [
-              SizedBox(height: 30.h),
+              SizedBox(height: 40.h),
               Image.asset("images/padlock.png"),
               SizedBox(height: 50.h),
               Text("Forgot Password?",
