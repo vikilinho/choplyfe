@@ -1,3 +1,4 @@
+import 'package:choplife/components/appfonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,22 +25,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               SizedBox(height: 40.h),
               Image.asset("images/padlock.png"),
               SizedBox(height: 50.h),
-              Text("Forgot Password?",
-                  style: GoogleFonts.inter(
-                    textStyle: TextStyle(
-                        color: Colors.black,
-                        fontStyle: FontStyle.italic,
-                        fontSize: 30.sp,
-                        fontWeight: FontWeight.w800),
-                  )),
+              Text(
+                "Forgot Password?",
+                style: AppFonts.topicText,
+              ),
               SizedBox(height: 15.h),
               Text("Let’s help you recover your password?",
                   style: GoogleFonts.inter(
-                    textStyle: TextStyle(
-                        color: Colors.black,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500),
+                    textStyle: AppFonts.normalText,
                   )),
               SizedBox(height: 35.h),
               Form(

@@ -1,3 +1,5 @@
+import 'package:choplife/components/appColors.dart';
+import 'package:choplife/components/appfonts.dart';
 import 'package:choplife/components/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -85,31 +87,19 @@ class _SignupPageState extends State<SignupPage> {
                 SizedBox(
                   height: 15.h,
                 ),
-                Stack(
-                  children: [
-                    Container(
-                      height: 45.h,
-                      width: 50.w,
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          border:
-                              Border(right: BorderSide(color: Colors.grey))),
-                      child: const Center(child: Text("+234")),
-                    ),
-                    TextFormField(
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(
-                                    0xffF4972E)), // Set the focus color to blue
-                          ),
-                        )),
-                  ],
-                ),
+                TextFormField(
+                    obscureText: false,
+                    decoration: const InputDecoration(
+                      hintText: "08060003222",
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color(
+                                0xffF4972E)), // Set the focus color to blue
+                      ),
+                    )),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -138,13 +128,7 @@ class _SignupPageState extends State<SignupPage> {
                   children: [
                     const Checkbox(value: false, onChanged: null),
                     Text("I accept the terms and privacy policy",
-                        style: GoogleFonts.inter(
-                          textStyle: TextStyle(
-                            color: Colors.black,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 16.sp,
-                          ),
-                        )),
+                        style: AppFonts.normalText),
                   ],
                 ),
                 SizedBox(
@@ -153,7 +137,7 @@ class _SignupPageState extends State<SignupPage> {
                 CustomButton(
                     text: "Sign Up",
                     onPressed: () {},
-                    color: const Color(0xffF4972E),
+                    color: AppColors.primaryColor,
                     textcolor: Colors.black)
               ],
             )),
