@@ -7,6 +7,7 @@ const String splashPage = 'SPLASH';
 const String landingPage = 'LANDINGPAGE';
 const String forgotPasswordPage = 'FORGOTPASSWORD';
 const String newPasswordPage = 'NEWPASSWORD';
+const String navigationPage = 'NAVIGATION';
 
 Route<dynamic> controller(RouteSettings settings) {
   switch (settings.name) {
@@ -24,6 +25,8 @@ Route<dynamic> controller(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const ForgotPassword());
     case newPasswordPage:
       return MaterialPageRoute(builder: (context) => const NewPasswordPage());
+    case navigationPage:
+      return MaterialPageRoute(builder: (context) => const NavigationScreen());
     default:
       throw Exception('Invalid route: ${settings.name}');
   }

@@ -1,8 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'route.dart' as route;
+
+var platform;
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +18,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    WidgetsFlutterBinding.ensureInitialized();
+    if (Platform.isAndroid) {
+      platform = "ANDROID"; // Android
+    } else if (Platform.isIOS) {
+      platform = "IOS"; // iOS
+    }
     return ScreenUtilInit(builder: (context, child) {
       designSize:
       const Size(360, 640);

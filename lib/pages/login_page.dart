@@ -1,5 +1,6 @@
 import 'package:choplife/route.dart' as route;
 import 'package:choplife/components/app_imports.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -148,7 +149,9 @@ class _LoginPageState extends State<LoginPage> with InputValidationMixin {
                       ),
                       CustomButton(
                           text: "Log In",
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.off(const NavigationScreen());
+                          },
                           color: const Color(0xffF4972E),
                           textcolor: Colors.black)
                     ],
