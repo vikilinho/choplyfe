@@ -1,9 +1,8 @@
-import 'dart:developer';
-
 import 'package:choplife/components/appfonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:choplife/route.dart' as route;
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -72,7 +71,7 @@ class _LandingPageState extends State<LandingPage> {
               textDirection: TextDirection.rtl,
               children: [
                 GestureDetector(
-                  onTap: () => log("signup"),
+                  onTap: () => Navigator.pushNamed(context, route.registerPage),
                   child: Container(
                     height: 50.h,
                     width: 342.w,
@@ -108,7 +107,7 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => log("Login"),
+                  onTap: () => Navigator.pushNamed(context, route.loginPage),
                   child: Container(
                       height: 50.h,
                       width: 180.w,

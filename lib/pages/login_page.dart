@@ -1,9 +1,5 @@
-import 'package:choplife/components/custom_button.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../components/socialicons.dart';
+import 'package:choplife/route.dart' as route;
+import 'package:choplife/components/app_imports.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -27,14 +23,7 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text("Hello Again",
-                    style: GoogleFonts.inter(
-                      textStyle: TextStyle(
-                          color: Colors.black,
-                          fontStyle: FontStyle.italic,
-                          fontSize: 30.sp,
-                          fontWeight: FontWeight.w800),
-                    )),
+                Text("Hello Again", style: AppFonts.topicText),
                 const SizedBox(
                   width: 10,
                 ),
@@ -45,13 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               children: [
                 Text("Welcome back you’ve been missed!",
-                    style: GoogleFonts.inter(
-                      textStyle: TextStyle(
-                          color: Colors.black,
-                          fontStyle: FontStyle.normal,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500),
-                    )),
+                    style: AppFonts.subText),
               ],
             ),
             SizedBox(
@@ -97,14 +80,18 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("Forgot password?",
-                        style: GoogleFonts.inter(
-                          textStyle: TextStyle(
-                              color: const Color(0xffF4972E),
-                              fontStyle: FontStyle.normal,
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w700),
-                        )),
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(
+                          context, route.forgotPasswordPage),
+                      child: Text("Forgot password?",
+                          style: GoogleFonts.inter(
+                            textStyle: TextStyle(
+                                color: const Color(0xffF4972E),
+                                fontStyle: FontStyle.normal,
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700),
+                          )),
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -165,24 +152,27 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 30.h,
             ),
-            RichText(
-                text: TextSpan(
-                    text: "Don’t have an account? ",
-                    style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                            color: Colors.black,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16.sp)),
-                    children: <TextSpan>[
-                  TextSpan(
-                      text: "Sign up",
+            GestureDetector(
+              onTap: () => Navigator.pushNamed(context, route.registerPage),
+              child: RichText(
+                  text: TextSpan(
+                      text: "Don’t have an account? ",
                       style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              color: Color(0xffFF8700),
+                          textStyle: TextStyle(
+                              color: Colors.black,
                               fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w600)))
-                ])),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16.sp)),
+                      children: <TextSpan>[
+                    TextSpan(
+                        text: "Sign up",
+                        style: GoogleFonts.poppins(
+                            textStyle: const TextStyle(
+                                color: Color(0xffFF8700),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w600)))
+                  ])),
+            ),
           ],
         ),
       )),

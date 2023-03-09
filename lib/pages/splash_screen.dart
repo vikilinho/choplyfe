@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:choplife/components/app_imports.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,21 +10,12 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _animationController;
-  late Animation<double> _animation;
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // _animationController = AnimationController(
-    //     vsync: this, duration: const Duration(milliseconds: 600));
-    // _animation = Tween<double>(begin: 0, end: 100).animate(_animationController)
-    //   ..addListener(() {
-    //     setState(() {});
-    //   });
-    // _animationController.forward();
-    Timer(const Duration(seconds: 3), () => context.go('/LandingPage'));
+
+    Timer(const Duration(seconds: 3), () => Get.off(const LandingPage()));
   }
 
   @override
