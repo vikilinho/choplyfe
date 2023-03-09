@@ -23,8 +23,8 @@ class AppFonts {
     textStyle: TextStyle(
       color: Colors.black,
       fontStyle: FontStyle.normal,
-      fontSize: 16.sp,
-      fontWeight: FontWeight.w500,
+      fontSize: 30.sp,
+      fontWeight: FontWeight.w600,
     ),
   );
 }

@@ -9,6 +9,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  bool obscure = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: 10.h),
             Row(
               children: [
-                Text("Welcome back you’ve been missed!",
+                Text("Welcome back, you’ve been missed!",
                     style: AppFonts.subText),
               ],
             ),
@@ -41,69 +46,103 @@ class _LoginPageState extends State<LoginPage> {
               height: 48.h,
             ),
             Form(
+                key: _formKey,
                 child: Column(
-              children: [
-                TextFormField(
-                    decoration: const InputDecoration(
-                  hintText: "Email Address",
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color:
-                            Color(0xffF4972E)), // Set the focus color to blue
-                  ),
-                )),
-                SizedBox(
-                  height: 15.h,
-                ),
-                TextFormField(
-                    decoration: const InputDecoration(
-                  hintText: "**********",
-                  suffixIcon: Icon(
-                    Icons.visibility_off,
-                    color: Color(0xffF4972E),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color:
-                            Color(0xffF4972E)), // Set the focus color to blue
-                  ),
-                )),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    GestureDetector(
-                      onTap: () => Navigator.pushNamed(
-                          context, route.forgotPasswordPage),
-                      child: Text("Forgot password?",
-                          style: GoogleFonts.inter(
-                            textStyle: TextStyle(
-                                color: const Color(0xffF4972E),
-                                fontStyle: FontStyle.normal,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w700),
-                          )),
+                    SizedBox(
+                      height: 50.h,
+                      width: 330.w,
+                      child: TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        controller: _emailController,
+                        decoration: const InputDecoration(
+                          hintText: "dvicxy@gmail.com",
+                          labelText: "Email Address",
+                          labelStyle: TextStyle(color: Colors.black),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffF4972E)),
+                            // Set the focus color to blue
+                          ),
+                        ),
+                        validator: (email) {
+                          return (email!.isEmpty || email.length < 14)
+                              ? 'Please input a valid email or phone number'
+                              : null;
+                        },
+                      ),
                     ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    SizedBox(
+                      height: 50.h,
+                      width: 330.w,
+                      child: TextFormField(
+                        obscureText: obscure,
+                        controller: _passwordController,
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        decoration: InputDecoration(
+                          hintText: "**********",
+                          labelText: 'Password',
+                          labelStyle: const TextStyle(color: Colors.black),
+                          suffix: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                obscure = !obscure;
+                              });
+                            },
+                            icon: const Icon(Icons.visibility,
+                                color: AppColors.primaryColor),
+                          ),
+                          border: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(
+                                    0xffF4972E)), // Set the focus color to blue
+                          ),
+                        ),
+                        validator: (String? password) {
+                          return (password!.isEmpty || password.length < 6)
+                              ? 'Please input a valid password'
+                              : null;
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          onTap: () => Navigator.pushNamed(
+                              context, route.forgotPasswordPage),
+                          child: Text("Forgot password?",
+                              style: GoogleFonts.inter(
+                                textStyle: TextStyle(
+                                    color: const Color(0xffF4972E),
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w700),
+                              )),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                    ),
+                    CustomButton(
+                        text: "Log In",
+                        onPressed: () {},
+                        color: const Color(0xffF4972E),
+                        textcolor: Colors.black)
                   ],
-                ),
-                SizedBox(
-                  height: 30.h,
-                ),
-                CustomButton(
-                    text: "Log In",
-                    onPressed: () {},
-                    color: const Color(0xffF4972E),
-                    textcolor: Colors.black)
-              ],
-            )),
+                )),
             SizedBox(
               height: 30.h,
             ),

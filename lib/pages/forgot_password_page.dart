@@ -13,9 +13,24 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
+  final TextEditingController _emailController = TextEditingController();
+  final _forgotpasswordKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: SafeArea(
           child: Center(
         child: Padding(
@@ -36,22 +51,31 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   )),
               SizedBox(height: 35.h),
               Form(
+                  key: _forgotpasswordKey,
                   child: Column(
-                children: [
-                  TextFormField(
-                      decoration: const InputDecoration(
-                    hintText: "Email Address",
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color:
-                              Color(0xffF4972E)), // Set the focus color to blue
-                    ),
+                    children: [
+                      TextFormField(
+                        controller: _emailController,
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        decoration: const InputDecoration(
+                          hintText: "Email Address",
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(
+                                    0xffF4972E)), // Set the focus color to blue
+                          ),
+                        ),
+                        validator: (email) {
+                          return (email!.isEmpty || email.length < 14)
+                              ? 'Please input a valid email or phone number'
+                              : null;
+                        },
+                      ),
+                    ],
                   )),
-                ],
-              )),
               SizedBox(height: 35.h),
               CustomButton(
                   text: "Submit",
