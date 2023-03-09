@@ -22,5 +22,6 @@ export 'package:choplife/components/appFonts.dart';
 export 'package:choplife/components/custom_button.dart';
 export 'package:choplife/route.dart';
 export '../components/socialicons.dart';
+export '../components/validator.dart';
 
 // export 'package:choplife/constants/app_routes.dart';
