@@ -25,5 +25,6 @@ export 'package:choplife/route.dart';
 export '../components/socialicons.dart';
 export '../components/validator.dart';
 export 'package:get/get.dart';
+export '../services/auth_services.dart';
 
 // export 'package:choplife/constants/app_routes.dart';

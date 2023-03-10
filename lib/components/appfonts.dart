@@ -27,4 +27,12 @@ class AppFonts {
       fontWeight: FontWeight.w600,
     ),
   );
+  static TextStyle categoriesText = GoogleFonts.inter(
+    textStyle: TextStyle(
+      color: const Color(0xff403C56),
+      fontStyle: FontStyle.italic,
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w800,
+    ),
+  );
 }
