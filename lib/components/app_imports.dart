@@ -26,5 +26,7 @@ export '../components/socialicons.dart';
 export '../components/validator.dart';
 export 'package:get/get.dart';
 export '../services/auth_services.dart';
+export '../components/event_card.dart';
+export '../components/promo_text.dart';
 
 // export 'package:choplife/constants/app_routes.dart';

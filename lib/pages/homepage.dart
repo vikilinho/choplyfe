@@ -108,101 +108,77 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Trending",
-                    style: AppFonts.categoriesText,
-                  ),
-                  Text(
-                    "View all",
-                    style: AppFonts.normalText,
-                  ),
-                ],
+              SizedBox(
+                height: 5.h,
               ),
-              Container(
-                width: 335.w,
-                height: 70.h,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Colors.grey, width: 1)),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      'images/img.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Feel The Beat',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 2.h),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.schedule,
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            Text(
-                              '8:00PM',
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                color: Colors.grey[600],
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 2.h),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.location_on,
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            Text(
-                              'The house',
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                color: Colors.grey[600],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 5),
-                      child: const Text(
-                        'Free',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              const PromoText(
+                mainText: 'Trending',
+                subText: "View all",
+              ),
+              const EventCard(
+                imagePath: 'images/img.png',
+                title: 'Feel The Beat',
+                time: '8:00PM',
+                location: 'The house',
+                isFree: true,
+              ),
+              SizedBox(height: 10.h),
+              const EventCard(
+                imagePath: 'images/img2.png',
+                title: 'The house party',
+                time: '8:00PM',
+                location: 'The garden',
+                isFree: true,
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              const PromoText(
+                mainText: 'Upcoming',
+                subText: "View all",
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              const EventCard(
+                imagePath: 'images/img3.png',
+                title: 'Paint & Sip',
+                time: '2:00PM',
+                location: 'Side walk',
+                isFree: true,
+              ),
+              SizedBox(height: 10.h),
+              const EventCard(
+                imagePath: 'images/img4.png',
+                title: 'Untamed',
+                time: '4PM To 12AM',
+                location: 'West Roxbury, MA',
+                isFree: true,
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              const PromoText(
+                mainText: 'Recent',
+                subText: "View all",
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              const EventCard(
+                imagePath: 'images/img3.png',
+                title: 'Paint & Sip',
+                time: '2:00PM',
+                location: 'Side walk',
+                isFree: true,
+              ),
+              SizedBox(height: 10.h),
+              const EventCard(
+                imagePath: 'images/img4.png',
+                title: 'Untamed',
+                time: '4PM To 12AM',
+                location: 'West Roxbury, MA',
+                isFree: true,
               ),
             ],
           ),
