@@ -9,4 +9,6 @@ class Endpoints {
       "https://choplyfe-api.herokuapp.com/apis/v1/auth-service/forgot-password"; //forgot password
   static const String resetPassword =
       "https://choplyfe-api.herokuapp.com/apis/v1/auth-service/reset-password"; //reset password
+  static const String getUserInfo =
+      "https://choplyfe-api.herokuapp.com/apis/v1/users-service/profile"; // get user info
 }

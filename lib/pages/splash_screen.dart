@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:choplife/components/app_imports.dart';
-import 'package:get/get.dart';
+
+import '../main.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,11 +13,34 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  Future getMyTk() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    var tokenObtained = prefs.getString('token');
+
+    log(tokenObtained.toString());
+    setState(() {
+      finalpass = tokenObtained;
+
+      // profilePic = prefs.getString('photo');
+      // if (prefs.getString('prefEmail') != null) {
+      //   firstLogin = false;
+      //   log(firstLogin.toString());
+      // }
+      // var token = finalPass;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
 
-    Timer(const Duration(seconds: 3), () => Get.off(const LandingPage()));
+    getMyTk().whenComplete(() async {
+      Timer(
+          const Duration(seconds: 2),
+          () => finalpass == null
+              ? Get.off(() => const LoginPage())
+              : Get.off(() => const NavigationScreen()));
+    });
   }
 
   @override

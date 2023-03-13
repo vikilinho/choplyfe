@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'route.dart' as route;
 
 var platform;
+var finalpass;
 
 void main() {
   runApp(const MyApp());
