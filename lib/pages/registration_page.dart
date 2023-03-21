@@ -37,6 +37,15 @@ class _SignupPageState extends State<SignupPage> with InputValidationMixin {
   }
 
   @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _nickNameController.dispose();
+    _phoneNumberController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

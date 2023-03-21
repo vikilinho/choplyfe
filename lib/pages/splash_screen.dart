@@ -20,13 +20,6 @@ class _SplashScreenState extends State<SplashScreen> {
     log(tokenObtained.toString());
     setState(() {
       finalpass = tokenObtained;
-
-      // profilePic = prefs.getString('photo');
-      // if (prefs.getString('prefEmail') != null) {
-      //   firstLogin = false;
-      //   log(firstLogin.toString());
-      // }
-      // var token = finalPass;
     });
   }
 

@@ -28,6 +28,13 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
   }
 
   @override
+  void dispose() {
+    _newpasswordController.dispose();
+    _confirmpasswordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

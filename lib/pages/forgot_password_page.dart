@@ -16,6 +16,13 @@ class _ForgotPasswordState extends State<ForgotPassword>
       Get.put(AuthService()); //initialise  auth service
   final _forgotpasswordKey = GlobalKey<FormState>();
   @override
+  void dispose() {
+    _emailController.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
