@@ -1,5 +1,4 @@
 import '../components/app_imports.dart';
-import '../components/custom_container.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -52,12 +51,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundImage: AssetImage("images/per.jpeg"),
-          ),
-        ),
+        leading: Builder(builder: (context) {
+          return GestureDetector(
+            onTap: () {
+              Scaffold.of(context).openDrawer();
+            },
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CircleAvatar(
+                backgroundImage: AssetImage("images/per.jpeg"),
+              ),
+            ),
+          );
+        }),
         actions: [
           IconButton(
             onPressed: () {},
@@ -67,6 +73,123 @@ class _HomePageState extends State<HomePage> {
             ),
           )
         ],
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.black,
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: const BoxDecoration(
+                color: Colors.transparent,
+              ),
+              child: Column(
+                children: [
+                  const CircleAvatar(
+                    backgroundImage: AssetImage("images/per.jpeg"),
+                  ),
+                  SizedBox(
+                    height: 10.5.h,
+                  ),
+                  Text(
+                    'Vikilinho',
+                    style: AppFonts.subTextWhiteBold,
+                  ),
+                  SizedBox(
+                    height: 22.5.h,
+                  ),
+                  const Expanded(
+                    child: Divider(
+                      color: Colors.grey,
+                      thickness: 1,
+                      height: 10,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                DrawerRow(
+                  onTap: () => null,
+                  text: "Profile",
+                  icon: Icons.person,
+                ),
+                SizedBox(
+                  height: 12.5.h,
+                ),
+                DrawerRow(
+                  onTap: () => null,
+                  text: "Subscription",
+                  icon: Icons.add_box,
+                ),
+                SizedBox(
+                  height: 12.5.h,
+                ),
+                DrawerRow(
+                  onTap: () => null,
+                  text: "Wallet",
+                  icon: Icons.wallet,
+                ),
+                SizedBox(
+                  height: 12.5.h,
+                ),
+                DrawerRow(
+                  onTap: () => null,
+                  text: "My Ticket",
+                  icon: Icons.airplane_ticket_rounded,
+                ),
+                SizedBox(
+                  height: 12.5.h,
+                ),
+                DrawerRow(
+                  onTap: () => null,
+                  text: "Schedule",
+                  icon: Icons.add_box,
+                ),
+                SizedBox(
+                  height: 12.5.h,
+                ),
+                DrawerRow(
+                  onTap: () => null,
+                  text: "Feedback",
+                  icon: Icons.chat,
+                ),
+                SizedBox(
+                  height: 12.5.h,
+                ),
+                DrawerRow(
+                  onTap: () => null,
+                  text: "Settings",
+                  icon: Icons.settings,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 80.5.h,
+            ),
+            Column(
+              children: [
+                Text(
+                  "Reach us through:",
+                  style: AppFonts.subTextWhite,
+                ),
+                SizedBox(
+                  height: 12.5.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset("images/fb.png"),
+                    Image.asset("images/inst.png"),
+                    Image.asset("images/twit.png"),
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
       body: SafeArea(
           child: Padding(

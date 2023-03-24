@@ -19,6 +19,22 @@ class AppFonts {
       fontWeight: FontWeight.w500,
     ),
   );
+  static TextStyle subTextWhite = GoogleFonts.inter(
+    textStyle: TextStyle(
+      color: Colors.white,
+      fontStyle: FontStyle.normal,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w500,
+    ),
+  );
+  static TextStyle subTextWhiteBold = GoogleFonts.inter(
+    textStyle: TextStyle(
+      color: Colors.white,
+      fontStyle: FontStyle.normal,
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w800,
+    ),
+  );
   static TextStyle topicText = GoogleFonts.inter(
     textStyle: TextStyle(
       color: Colors.black,
