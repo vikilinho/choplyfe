@@ -16,6 +16,7 @@ export 'package:choplife/pages/landing_page.dart';
 export 'package:choplife/pages/forgot_password_page.dart';
 export 'package:choplife/pages/new_password_page.dart';
 export "package:choplife/navigation.dart";
+export 'package:choplife/pages/profile_page.dart';
 
 // Constants
 export 'package:choplife/components/appColors.dart';

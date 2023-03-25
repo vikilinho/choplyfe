@@ -66,7 +66,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
           // Trips(),
           LandingPage(),
 
-          LoginPage(),
+          ProfilePage(),
           ForgotPassword(),
         ],
       ),
