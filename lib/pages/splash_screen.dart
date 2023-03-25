@@ -18,6 +18,14 @@ class _SplashScreenState extends State<SplashScreen> {
     var tokenObtained = prefs.getString('token');
 
     log(tokenObtained.toString());
+    log(firstLaunch.toString());
+    isFirstLaunch = prefs.getBool('firstLaunch') ?? true;
+    setState(() {
+      firstLaunch = isFirstLaunch;
+    });
+    if (isFirstLaunch) {
+      prefs.setBool('isFirstLaunch', false);
+    }
     setState(() {
       finalpass = tokenObtained;
     });

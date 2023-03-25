@@ -1,3 +1,4 @@
+import 'package:choplife/components/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,6 +26,14 @@ class AppFonts {
       fontStyle: FontStyle.normal,
       fontSize: 16.sp,
       fontWeight: FontWeight.w500,
+    ),
+  );
+  static TextStyle subTextOrange = GoogleFonts.inter(
+    textStyle: TextStyle(
+      color: AppColors.primaryColor,
+      fontStyle: FontStyle.normal,
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w600,
     ),
   );
   static TextStyle subTextWhiteBold = GoogleFonts.inter(

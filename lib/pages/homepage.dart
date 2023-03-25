@@ -1,4 +1,5 @@
 import '../components/app_imports.dart';
+import 'package:choplife/route.dart' as route;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -112,7 +113,7 @@ class _HomePageState extends State<HomePage> {
             Column(
               children: [
                 DrawerRow(
-                  onTap: () => null,
+                  onTap: () => Navigator.pushNamed(context, route.profilePage),
                   text: "Profile",
                   icon: Icons.person,
                 ),

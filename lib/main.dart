@@ -8,6 +8,8 @@ import 'route.dart' as route;
 
 var platform;
 var finalpass;
+var firstLaunch;
+var isFirstLaunch;
 
 void main() {
   runApp(const MyApp());

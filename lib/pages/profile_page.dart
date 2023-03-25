@@ -13,6 +13,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        elevation: 0,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -24,16 +25,29 @@ class _ProfilePageState extends State<ProfilePage> {
       body: SafeArea(
           child: Column(
         children: [
-          const CircleAvatar(
-            backgroundImage: AssetImage("images/per.jpeg"),
+          Row(
+            children: const [
+              CircleAvatar(
+                backgroundImage: AssetImage("images/per.jpeg"),
+              ),
+            ],
           ),
           SizedBox(
             height: 10.5.h,
           ),
           Text(
             'Personal Details',
-            style: AppFonts.subTextWhiteBold,
+            style: AppFonts.subTextOrange,
           ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Name",
+                style: AppFonts.subText,
+              ),
+            ],
+          )
         ],
       )),
     );
