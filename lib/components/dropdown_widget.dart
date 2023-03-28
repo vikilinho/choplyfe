@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 enum Country {
@@ -49,20 +51,30 @@ class _MyDropdownTextFieldWidgetState extends State<MyDropdownTextFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField<Country>(
-      decoration: const InputDecoration(
-        labelText: 'Country',
-        border: OutlineInputBorder(),
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.grey[200],
+        focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(
+            color: Colors.black,
+            width: 1.0,
+          ),
+        ),
       ),
-      value: _selectedCountry,
+      value: Country.values.first, //change to initial user country
       items: Country.values
           .map((country) => DropdownMenuItem<Country>(
                 value: country,
-                child: Text(country.toString()),
+                child: Text(country.name.toString()),
               ))
           .toList(),
       onChanged: (newValue) {
         setState(() {
           _selectedCountry = newValue;
+          log(_selectedCountry.toString());
         });
       },
     );

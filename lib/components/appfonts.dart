@@ -60,4 +60,12 @@ class AppFonts {
       fontWeight: FontWeight.w800,
     ),
   );
+  static TextStyle categoriesTextNormal = GoogleFonts.inter(
+    textStyle: TextStyle(
+      color: const Color(0xff403C56),
+      fontStyle: FontStyle.normal,
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w400,
+    ),
+  );
 }
